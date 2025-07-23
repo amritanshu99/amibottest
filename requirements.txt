@@ -1,5 +1,5 @@
-torch==1.13.1+cpu
-sentence-transformers==2.2.2
-transformers==4.25.1
+torch
+sentence-transformers
+transformers
 flask
 rapidfuzz
