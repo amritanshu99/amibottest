@@ -79,6 +79,11 @@ def get_response(user_input, fuzz_threshold=60):
             "response": f"🤖 Sorry, I’m not sure what you meant.\n💡 Did you mean: '{top_variant}'?\nPlease rephrase your question."
         }
 
+# ... [unchanged import and initial code above]
+
+# ✅ Load model and data immediately when the app starts, even with Gunicorn
+load_all()
+
 # 🌐 Routes
 @app.route("/")
 def home():
@@ -99,7 +104,7 @@ def ask():
 def ping():
     return "pong"
 
-# ✅ Explicitly load model & start app
+# 🟡 For local development only
 if __name__ == "__main__":
-    load_all()
     app.run()
+
